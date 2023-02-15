@@ -1,11 +1,11 @@
 import { Application } from 'express';
 
 const path = require('path');
-                const express = require('express');
+const express = require('express');
 const morgan = require('morgan');
 const hbs = require('express-handlebars');
 
-const router =                                  require('./app/routes');
+const router = require('./app/routes');
 
 const app: Application = express();
 const PORT = 3000;
@@ -14,7 +14,7 @@ const PORT = 3000;
 app.use(express.static(path.join(__dirname, 'public')));
 
 //http ts node logger
-                app.use(morgan('combined'));
+app.use(morgan('combined'));
 
 //using html template
 app.engine('.hbs', hbs.engine({ extname: '.hbs' }));
